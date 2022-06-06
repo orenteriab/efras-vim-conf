@@ -53,3 +53,22 @@ else
 	fi
 fi
 
+# Installing CoC
+if [ ! -d "$VIM_START/coc" ]; then
+	echo 'Installing coc.vim'
+	git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1 "$VIM_START/coc"
+	echo 'coc.vim installed'
+else
+	echo 'It seems coc.vim is installed'
+	echo 'Would you like me to update coc.vim? [y/Y]'
+	read UPDATE_COC_VIM
+
+	if [ $UPDATE_COC_VIM = 'y' ] || [  $UPDATE_COC_VIM = 'Y' ]; then
+		echo 'Updating coc.vim'
+		cd $VIM_START/coc
+		git pull origin release
+		echo 'coc.vim is updated'
+		cd $CURRENT_DIRECTORY
+	fi
+fi
+
