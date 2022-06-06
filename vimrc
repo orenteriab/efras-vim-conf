@@ -19,6 +19,7 @@ nnoremap <leader>l <C-w>l
 nnoremap <leader>k <C-w>k
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
+nnoremap <leader>w :bd
 
 " Insert mode
 inoremap <C-s> <Esc>:w<CR>
